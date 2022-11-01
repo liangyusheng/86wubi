@@ -2,13 +2,18 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="style.css">
+	<style>
+		body {
+		    background-color: #202124; }
+    	</style>
+
 </head>
 
 <body>
 	<div x-data="WubiInput()">
 		<div>
-			<input type="button" @click="showTextarea = !showTextarea" value="编辑输入文本" />
-			<input type="button" @click="resetProgress" value="重置进度" />
+			<input type="button" style="background-color: #444444; color: #888888;" @click="showTextarea = !showTextarea" value="编辑输入文本" />
+			<input type="button" style="background-color: #444444; color: #888888;" @click="resetProgress" value="重置进度" />
 		</div>
 
 		<textarea x-show="showTextarea" x-model="target" x-ref="textarea">
