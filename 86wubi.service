@@ -1,0 +1,17 @@
+[Unit]
+Description=86wubi
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+# WorkingDirectory=/path/86wubi 				# path to your 86wubi directory
+ExecStart=/path/86wubi/run_server.py --directory /path/86wubi	# path to your 86wubi directory
+ExecStop=/bin/kill -WINCH ${MAINPID}
+Restart=on-failure
+Environment=USER=root HOME=/path/86wubi				# path to your 86wubi directory
+
+[Install]
+WantedBy=multi-user.target
+
